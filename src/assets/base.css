@@ -61,20 +61,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background-image: url('fu2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 1);
-  height: 28vh;
-  /* atau atur sesuai kebutuhan tinggi elemen */
-  height: 720px;
-  justify-content: center;
-  float: center;
-
-
-
-
+  background: var(--color-background);
   transition:
     color 0.5s,
     background-color 0.5s;

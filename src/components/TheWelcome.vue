@@ -1,132 +1,88 @@
-<script setup>
+<script setup lang="ts">
 import WelcomeItem from './WelcomeItem.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
-import 'vue';
-import '@fortawesome/fontawesome-free/css/all.css';
 </script>
 
-<style>
-#welcom{
-  color:white;
-}
-#diri31 {
-            height: 350px;
-            width: 350px;
-            display: flex;
-            display: inline-block;
-            margin-left: 100px;
-            margin-top: 30px;
-            color: white;
-
-        }
-        
-        #diri4 {
-            text-align: center;
-            margin-top: 5px;
-            position: relative;
-           
-        }
-        
-        #diri43 {
-            text-align: center;
-            margin-top: 5px;
-            position: relative;
-            color: gold;
-            font-weight: bold; 
-            gap: 2px;
-           
-        }
-        #koma{
-       color:gold;
-
-    }
-    
-    table {
-            margin-top: 10px;
-    }
-    #ikon{
-        margin-left: 100px;
-        margin-top: -59px;
-        height: 60px;
-        display: flex;
-        justify-content: 70px;
-        transition: transform 1.4s;
-      
-    }
-    .social-icon {
-        font-size: 24px; /* Ukuran ikon */
-        margin: 0 10px; /* Menambahkan margin horizontal di sekitar ikon */
-    }
-    #ikon :hover{
-        transform: scale(1.3);
-        transition: transform 1.4s;
-    }
-
-
-
-</style>
-
 <template>
-   
-    <li id="diri31">
-                <h2 id="diri43">Tentang saya</h2>
-                <p id="diri4"><i id="loremText">
-    Saya berasal dari pekanbaru dan saat ini sedang berkuliah di Universita islam Riau, saat ini saya semester 4
-    dan saya sedang berfokus untuk mempelajari pemrograman web</i>
-                        <p id="koma">
-                            <b>.............................................................................................................</b>
-                        </p>
-                    </p>
+  <WelcomeItem>
+    <template #icon>
+      <DocumentationIcon />
+    </template>
+    <template #heading>Documentation</template>
 
-                <table>
-                    <tr>
-                        <th>D.O.B</th>
-                        <th>:</th>
-                        <td>23-04-2002</td>
-                    </tr>
+    Vue’s
+    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
+    provides you with all information you need to get started.
+  </WelcomeItem>
 
-                    <tr>
-                        <th>PHONE</th>
-                        <th>:</th>
-                        <td>+6281364219425</td>
-                    </tr>
+  <WelcomeItem>
+    <template #icon>
+      <ToolingIcon />
+    </template>
+    <template #heading>Tooling</template>
 
-                    <tr>
-                        <th>ADDRESS</th>
-                        <th>:</th>
-                        <td>Pekanbaru, Riau, ID</td>
-                    </tr>
+    This project is served and bundled with
+    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
+    recommended IDE setup is
+    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
+    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
+    you need to test your components and web pages, check out
+    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
+    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
+      >Cypress Component Testing</a
+    >.
 
-                    <tr>
-                        <th>E-MAIL</th>
-                        <th>:</th>
-                        <td>ricofranjes@gmail.com</td>
-                    </tr>
+    <br />
 
-                </table>
-            </li> 
-            <div><br>
+    More instructions are available in <code>README.md</code>.
+  </WelcomeItem>
 
-                <div id="ikon">
-                <a href="https://www.instagram.com/p/C4mma4UL4On/?igsh=YmtoZ2pqdGprcG9w" target="_blank">
-                    <i class="fab fa-instagram social-icon"></i>
-                </a>
+  <WelcomeItem>
+    <template #icon>
+      <EcosystemIcon />
+    </template>
+    <template #heading>Ecosystem</template>
 
-                <a href="https://www.facebook.com/riko.franjeslee" target="_blank">
-                    <i class="fab fa-facebook social-icon"></i>
-                </a>
-            </div>
-  </div>
+    Get official tools and libraries for your project:
+    <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
+    <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
+    <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>, and
+    <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a>. If
+    you need more resources, we suggest paying
+    <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
+    a visit.
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <CommunityIcon />
+    </template>
+    <template #heading>Community</template>
+
+    Got stuck? Ask your question on
+    <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
+    Discord server, or
+    <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
+      >StackOverflow</a
+    >. You should also subscribe to
+    <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
+    the official
+    <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
+    twitter account for latest news in the Vue world.
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <SupportIcon />
+    </template>
+    <template #heading>Support Vue</template>
+
+    As an independent project, Vue relies on community backing for its sustainability. You can help
+    us by
+    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
+  </WelcomeItem>
 </template>
-
-
-<style scoped>
-.social-icon {
-  font-size: 24px; /* Sesuaikan ukuran ikon sesuai kebutuhan */
-  margin-right: 10px; /* Jarak antara ikon */
-}
-</style>

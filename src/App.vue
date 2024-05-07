@@ -1,70 +1,68 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
+<template >
+  <div class="vue1"><b>
+    <p v-if="name" :style="{ color: textColor }">Selamat datang di website vue sederhana saya {{ name }}</p>
+    <!-- Elemen input teks untuk menginputkan nama -->
+    <div class="vue2">
+    <input type="text" v-model="name" placeholder=" Masukkan nama">
+  </div>
 
-<template>
-  <header>
-
-    <div id="juna">
-      <div id="posisigambar">
-    <img alt="Vue logo" class="logo" src="./assets/saya.jpg" width="205" height="225" id="gambar"/>
-
-    <div class="wrapper">
-      <HelloWorld msg="Rico franjes" />
+    <div class="vue3">
+      Berikan inputan dari beberapa karakter, dan jika ingin mengubah warna teks makah klik tombil ubah warna
     </div>
-  </div>
-  </div>
-  </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <button @click="changeTextColor">Ubah Warna Teks</button>
+  
+  </b>
+  </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      name: '', // Variabel untuk menyimpan nama yang diinputkan
+      textColor: 'black' // Warna awal teks
+    };
+  },
+  methods: {
+    // Metode untuk mengubah warna teks
+    changeTextColor() {
+      // Mengubah warna teks menjadi merah, hijau, atau kuning secara bergantian
+      if (this.textColor === 'red') {
+        this.textColor = 'green';
+      } else if (this.textColor === 'green') {
+        this.textColor = 'yellow';
+      } else {
+        this.textColor = 'red';
+      }
+    }
+  }
+};
+</script>
+
 <style scoped>
-#juna{
-  box-shadow: 0 0 40px rgba(0, 0, 0, 12);
-  margin-left:-3px;
-  height: 400px;
-  width: 380px;
-
+.vue1{
+  color: white;
+background-color: rgb(192, 192, 192);
+width: 320px;
+height: 350px;
+padding: 20px;
+font-weight: bold;
 }
-
-#posisigambar{
-  margin-left: 80px;
-  margin-top: 50px;
-  
+.vue2{
+  margin-top: 13px;;
+  font-weight: bold;
 }
-#gambar{
-  border-radius: 48%;
+.vue3{
+  margin-top: 13px;;
 }
-
-header {
-  line-height: 1.5;
+button{
+  background-color: rgb(52, 165, 42);
+  border-radius: 4px;
+  margin-top: 10px;
+  color: white;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
+button:hover{
+  background-color: rgba(255, 0, 0, 0.863);
 }
 </style>
